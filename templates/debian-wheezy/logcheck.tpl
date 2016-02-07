@@ -13,7 +13,7 @@
 # are present their contents will be read and used as the header and
 # footer of any generated mails.
 
-#INTRO=1
+INTRO=0
 
 # Controls the level of filtering:
 # Can be Set to "workstation", "server" or "paranoid" for different
