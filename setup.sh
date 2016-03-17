@@ -5,7 +5,7 @@
 
 
 
-base=/opt/sf-log-monitor/templates/$OSVER
+base=/opt/farm/ext/log-monitor/templates/$OSVER
 
 if [ ! -f $base/logcheck.tpl ]; then
 	echo "skipping logcheck setup, unsupported operating system version"
@@ -15,7 +15,7 @@ fi
 install_deb logcheck
 
 echo "setting up custom ignoring rules for logcheck"
-cp -f /opt/sf-log-monitor/rules/local-farmer.tpl /etc/logcheck/ignore.d.server/local-farmer
+cp -f /opt/farm/ext/log-monitor/rules/local-farmer.tpl /etc/logcheck/ignore.d.server/local-farmer
 
 echo -n "detecting report level: "
 if [ -d /etc/NetworkManager ]; then
