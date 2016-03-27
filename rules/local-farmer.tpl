@@ -1,5 +1,5 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ /USR/SBIN/CRON\[[0-9]+\]: \(CRON\) error \(grandchild #[0-9]+ failed with exit status 1\)$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: error \(.*\) resolving '[0-9a-z.-]+/(A|AAAA|NS|DS|DNSKEY)/IN': [0-9.]+#53$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: error \(.*\) resolving '[0-9a-z.-]+/(A|AAAA|NS|DS|DNSKEY|PTR)/IN': [0-9.]+#53$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: (  )?validating @0x[0-9a-f]+: [0-9a-z.-]+ (NS|SOA): got insecure response; parent indicates it should be secure$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: (  )?validating @0x[0-9a-f]+: [0-9a-z.-]+ (A|AAAA|NS|DS|SOA|NSEC|NSEC3): no valid signature found$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: (  )?validating @0x[0-9a-f]+: [0-9a-z.-]+ DNSKEY: no valid signature found \(DS\)$
@@ -23,7 +23,8 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: message repeated [0-9]+ times: \[ Received disconnect from [0-9.]+: [0-9]+: .* \[preauth\]\]
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: message repeated [0-9]+ times: \[ Failed password for root from [0-9.]+ port [0-9]+ ssh2\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: PAM service\(sshd\) ignoring max retries; [0-9]+ > [0-9]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient: DHCPREQUEST of [0-9.]+ on eth0 to [0-9.]+ port [0-9]+ \(xid=0x[0-9a-f]+\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sftp-server\[[0-9]+\]: error: process_write: write failed$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient: DHCPREQUEST of [0-9.]+ on [0-9a-z]+ to [0-9.]+ port [0-9]+ \(xid=0x[0-9a-f]+\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ ntpdate\[[0-9]+\]: (adjust|step) time server [0-9.]{7,15} offset -?[0-9.]+ sec$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sSMTP\[[0-9]+\]: Sent mail for .* \([0-9]+ [0-9.]+ Bye\) uid=[0-9]+ username=[\._[:alnum:]-]+ outbytes=[0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sSMTP\[[0-9]+\]: message repeated [0-9]+ times: \[ Sent mail for .* \([0-9]+ [0-9.]+ Bye\) uid=[0-9]+ username=[\._[:alnum:]-]+ outbytes=[0-9]+\]$
