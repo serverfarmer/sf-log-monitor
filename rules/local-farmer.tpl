@@ -17,7 +17,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: subsystem request for sftp by user (hudson|jenkins)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: fatal: Read from socket failed: Connection reset by peer \[preauth\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: fatal: no matching cipher found: client [-.@[:alnum:]]+ server [-.,@[:alnum:]]+ \[preauth\]$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Accepted publickey for [a-z0-9-]+ from [0-9.]+ port [0-9]+ ssh2: (RSA|DSA) [0-9a-zA-Z:]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Accepted publickey for [a-z0-9-]+ from [0-9.]+ port [0-9]+ ssh2: (RSA|DSA) [0-9a-zA-Z:+]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: (error: )?Received disconnect from [0-9.]+: [0-9]+: .* \[preauth\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: (error: )?maximum authentication attempts exceeded for root from [0-9.]+ port [0-9]+ ssh2 \[preauth\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: message repeated [0-9]+ times: \[ Received disconnect from [0-9.]+: [0-9]+: .* \[preauth\]\]
@@ -54,11 +54,12 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info>   nameserver '[0-9.]+'$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info>   domain name '[0-9a-z.]+'$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: CRON-APT LINE: /usr/bin/apt-get -o quiet=1 dist-upgrade -d -y -o APT::Get::Show-Upgraded=true$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd: pam_unix\(systemd-user:session\): session closed for user [a-z0-9-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Removed session [0-9]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: New session [0-9]+ of user [a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Started Session [0-9]+ of user [a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Created|Removed) slice User Slice of [a-z0-9-]+\.$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Stopping|Stopped) User Manager for UID [0-9]+[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) User Manager for UID [0-9]+[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Starting Exit the Session\.\.\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Start(ed|ing) Daily apt activities[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Start(ed|ing) Cleanup of Temporary Directories[.]+$
