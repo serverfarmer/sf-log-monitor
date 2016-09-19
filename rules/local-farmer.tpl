@@ -1,16 +1,4 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ /USR/SBIN/CRON\[[0-9]+\]: \(CRON\) error \(grandchild #[0-9]+ failed with exit status 1\)$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: error \(.*\) resolving '[0-9a-z.-]+/(A|AAAA|NS|DS|DNSKEY|PTR)/IN': [0-9.]+#53$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: (  )?validating @0x[0-9a-f]+: [0-9a-z.-]+ (NS|SOA): got insecure response; parent indicates it should be secure$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: (  )?validating @0x[0-9a-f]+: [0-9a-z.-]+ (A|AAAA|NS|DS|SOA|NSEC|NSEC3): no valid signature found$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: (  )?validating @0x[0-9a-f]+: [0-9a-z.-]+ DNSKEY: no valid signature found \(DS\)$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: (  )?validating @0x[0-9a-f]+: [0-9a-z.-]+ (DNSKEY|NSEC3): verify failed due to bad signature \(keyid=[0-9]+\): RRSIG has expired$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: (  )?validating @0x[0-9a-f]+: [0-9a-z.-]+ A: bad cache hit \([0-9a-z.-]+/DNSKEY\)$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: managed-keys-zone: No DNSKEY RRSIGs found for '\.': success$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: client [0-9.]+#[0-9]+ \([0-9a-z.-]+\): query \(cache\) '[0-9a-z.-]+/(A|AAAA|ANY)/IN' denied$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: clients-per-query (increased|decreased) to [0-9]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: message repeated [0-9]+ times: \[ success resolving '[0-9a-z.-]+/(A|AAAA)' \(in '[0-9a-z.-]+'\?\) after reducing the advertised EDNS UDP packet size to [0-9]+ octets\]$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: message repeated [0-9]+ times: \[ error \(.*\) resolving '[0-9a-z.-]+/A/IN': [0-9:]+#53\]$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ named\[[0-9]+\]: DNS format error from [0-9.]+#53 resolving [0-9a-z.-]+/AAAA for client [0-9.]+#[0-9]+: reply has no answer$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snmpd\[[0-9]+\]: Connection from UDP: \[[.0-9]{7,15}\]:[0-9]{4,5}->\[[.0-9]{7,15}\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snmpd\[[0-9]+\]: last message repeated [0-9]+ times$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snmpd\[[0-9]+\]: ipSystemStatsTable node ipSystemStatsOutFragOKs not implemented: skipping$
@@ -54,12 +42,15 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info>   nameserver '[0-9.]+'$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info>   domain name '[0-9a-z.]+'$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: CRON-APT LINE: /usr/bin/apt-get -o quiet=1 dist-upgrade -d -y -o APT::Get::Show-Upgraded=true$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd: pam_unix\(systemd-user:session\): session opened for user [a-z0-9-]+ by \(uid=[0-9]+\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd: pam_unix\(systemd-user:session\): session closed for user [a-z0-9-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Removed session [0-9]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: New session [0-9]+ of user [a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Started Session [0-9]+ of user [a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Created|Removed) slice User Slice of [a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) User Manager for UID [0-9]+[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Reached target [a-zA-Z ]\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Startup finished in [0-9]+ms\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Starting Exit the Session\.\.\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Start(ed|ing) Daily apt activities[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Start(ed|ing) Cleanup of Temporary Directories[.]+$
