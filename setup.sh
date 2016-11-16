@@ -18,7 +18,7 @@ echo "setting up custom ignoring rules for logcheck"
 cp -f /opt/farm/ext/log-monitor/rules/local-farmer.tpl /etc/logcheck/ignore.d.server/local-farmer
 
 echo -n "detecting report level: "
-if [ -d /etc/NetworkManager ]; then
+if [ -f /etc/X11/xinit/xinitrc ]; then
 	level="workstation"
 else
 	level="server"
