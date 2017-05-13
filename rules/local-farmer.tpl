@@ -20,7 +20,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Bad protocol version identification '.*' from [0-9.]+ port [0-9.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Timeout, client not responding[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sftp-server\[[0-9]+\]: error: process_write: write failed$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ pure-ftpd: \(\?@(localhost|127.0.0.1)\) \[INFO\] Logout[.]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ pure-ftpd: \(\?@(localhost|127.0.0.1)\) \[INFO\] Logout\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: DHCP(NAK|ACK|OFFER) (of [.0-9]{7,15} )?from [.0-9]{7,15}$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: DHCP(REQUEST|RELEASE) (of [.0-9]{7,15} )?on [[:alnum:].-]+ to [.0-9]{7,15} port [0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: DHCPREQUEST of [.0-9]{7,15} on [[:alnum:].-]+ to [.0-9]{7,15} port [0-9]+ \(xid=0x[0-9a-f]+\)$
@@ -31,6 +31,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ /usr/sbin/irqbalance: irq [0-9]+ affinity_hint subset empty$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ postfix/smtpd\[[0-9]+\]: warning: hostname [0-9a-zA-Z.-]+ does not resolve to address [0-9.]+(: )?(Name or service not known|Temporary failure in name resolution)?$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ postfix/smtpd\[[0-9]+\]: disconnect from [0-9a-zA-Z.-]+\[[0-9.]+\] helo=1 mail=1 rcpt=1 data=1 quit=1 commands=5$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ postfix/smtpd\[[0-9]+\]: disconnect from localhost(.localdomain)?\[127.0.0.1\] commands=0/0$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ postfix/discard\[[0-9]+\]: [0-9A-Z]+: to=<[a-z0-9\@.-]+>, (orig_to=<[a-z0-9\@.-]+>, )?relay=none, delay=[0-9.]+, delays=[0-9.]+/[0-9.]+/0/[0-9.]+, dsn=2\.0\.0, status=sent \([a-z0-9.-]+\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] \[drm:intel_set_pch_fifo_underrun_reporting \[[0-9a-z]+\]\] \*ERROR\* uncleared pch fifo underrun on pch transcoder A$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] \[drm:intel_set_cpu_fifo_underrun_reporting \[[0-9a-z]+\]\] \*ERROR\* uncleared fifo underrun on pipe B$
@@ -40,6 +41,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] sound hdaudioC0D0: HDMI: invalid ELD data byte 0$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] Process accounting resumed$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] nf_conntrack: automatic helper assignment is deprecated and it will be removed soon\. Use the iptables CT target to attach helpers instead\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] nf_conntrack: falling back to vmalloc\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] IPv6: ADDRCONF\(NETDEV_UP\): veth[0-9a-zA-Z]+: link is not ready$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] IPv6: ADDRCONF\(NETDEV_CHANGE\): veth[0-9a-zA-Z]+: link becomes ready$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] (docker0|lxcbr0|br0|br-[0-9a-f]+): port [0-9]+\(veth[0-9a-zA-Z]+\) entered (forwarding|disabled) state$
