@@ -1,5 +1,6 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ /USR/SBIN/CRON\[[0-9]+\]: \(CRON\) error \(grandchild #[0-9]+ failed with exit status 1\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ CRON\[[0-9]+\]: message repeated [0-9]+ times: \[ \(root\) CMD \(/opt/farm/ext/[a-z0-9-]+/cron/[a-z0-9-]+\.sh\)\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ CRON\[[0-9]+\]: message repeated [0-9]+ times: \[ \(root\) CMD \(command -v debian-sa1 > /dev/null && debian-sa1 1 1\)\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snmpd\[[0-9]+\]: Connection from UDP: \[[.0-9]{7,15}\]:[0-9]{4,5}->\[[.0-9]{7,15}\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snmpd\[[0-9]+\]: last message repeated [0-9]+ times$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snmpd\[[0-9]+\]: ipSystemStatsTable node ipSystemStatsOutFragOKs not implemented: skipping$
@@ -13,6 +14,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: (error: )?maximum authentication attempts exceeded for (invalid user )?.* from [0-9.]+ port [0-9]+ ssh2 \[preauth\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: message repeated [0-9]+ times: \[ Received disconnect from [0-9.]+: [0-9]+: .* \[preauth\]\]
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: message repeated [0-9]+ times: \[ Failed password for root from [0-9.]+ port [0-9]+ ssh2\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: message repeated [0-9]+ times: \[ Did not receive identification string from 127\.0\.0\.1\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: PAM service\(sshd\) ignoring max retries; [0-9]+ > [0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Disconnecting: Change of username or service not allowed: \([a-zA-Z0-9-]+,ssh-connection\) -> \([a-zA-Z0-9-]+,ssh-connection\) \[preauth\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Disconnecting: Too many authentication failures \[preauth\]$
@@ -62,7 +64,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: CRON-APT LINE: /usr/bin/apt-get -o quiet=1 dist-upgrade -d -y -o APT::Get::Show-Upgraded=true$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd: pam_unix\(systemd-user:session\): session opened for user [a-z0-9-]+ by \(uid=[0-9]+\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd: pam_unix\(systemd-user:session\): session closed for user [a-z0-9-]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Removed session [0-9]+\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Removed session [a-z0-9]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: New session [0-9]+ of user [a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: message repeated [0-9]+ times: \[ Reloading\.\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Reloading\.$
@@ -87,6 +89,8 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Failed to reset devices\.list on /system.slice/[0-9a-z\\.-]+: Operation not permitted$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: [a-z.-]+\.timer: Adding [0-9a-z. ]+ random time\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snap\[[0-9]+\]: All snaps up-to-date\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snapd\[[0-9]+\]: [0-9.:/ ]+ snapmgr.go:[0-9]+: No snaps to auto-refresh found$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ /usr/lib/snapd/snapd\[[0-9]+\]: snapmgr.go:[0-9]+: No snaps to auto-refresh found$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ os-prober: debug: running /usr/lib/os-probes/mounted/[a-z0-9-]+ on mounted /dev/(mapper/)?[a-z0-9_-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ os-prober: debug: running /usr/lib/os-probes/[a-z0-9-]+ on /dev/(mapper/)?[a-z0-9_-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ os-prober: debug: os detected by /usr/lib/os-probes/[a-z0-9-]+$
