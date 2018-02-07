@@ -12,7 +12,7 @@ if [ ! -f $base/logcheck.tpl ]; then
 	exit 1
 fi
 
-install_deb logcheck
+/opt/farm/ext/repos/package/install.sh logcheck
 
 echo "setting up custom ignoring rules for logcheck"
 cp -f /opt/farm/ext/log-monitor/rules/local-farmer.tpl /etc/logcheck/ignore.d.server/local-farmer
