@@ -72,8 +72,8 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Activating service name='[0-9a-z._]+' \(using servicehelper\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus(-daemon)?\[[0-9]+\]: \[system\] Successfully activated service '[0-9a-z._]+'$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus-daemon\[[0-9]+\]: \[system\] Activating via systemd: service name='[0-9a-z._]+' unit='[0-9a-z.-]+' requested by '[0-9.:]+' \(uid=0 pid=[0-9]+ comm="/usr/sbin/NetworkManager --no-daemon " label="unconfined"\)$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ nm-dispatcher: req:1 'dhcp4-change' \[[0-9a-z.]+\]: new request \([0-9]+ scripts\)$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ nm-dispatcher: req:1 'dhcp4-change' \[[0-9a-z.]+\]: start running ordered scripts\.\.\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ nm-dispatcher: req:[0-9]+ 'dhcp4-change' \[[0-9a-z.]+\]: new request \([0-9]+ scripts\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ nm-dispatcher: req:[0-9]+ 'dhcp4-change' \[[0-9a-z.]+\]: start running ordered scripts\.\.\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \([0-9a-z]+\): DHCPv4 state changed renew -> renew$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info>   (address|gateway) [0-9.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info>   prefix 22 \([0-9.]+\)$
