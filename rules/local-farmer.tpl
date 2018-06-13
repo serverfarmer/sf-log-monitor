@@ -90,6 +90,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd: pam_unix\(systemd-user:session\): session opened for user [a-z0-9-]+ by \(uid=[0-9]+\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd: pam_unix\(systemd-user:session\): session closed for user [a-z0-9-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: Could not generate persistent MAC address for veth[0-9a-zA-Z]+: No such file or directory$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: Network interface NamePolicy= disabled on kernel command line, ignoring\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Removed session [a-z0-9]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: New session [a-f0-9]+ of user [a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: message repeated [0-9]+ times: \[ Reloading\.\]$
