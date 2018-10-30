@@ -16,6 +16,7 @@ fi
 
 echo "setting up custom ignoring rules for logcheck"
 cp -f /opt/farm/ext/log-monitor/rules/local-farmer.tpl /etc/logcheck/ignore.d.server/local-farmer
+cp -f /opt/farm/ext/log-monitor/rules/local-heartbeat.tpl /etc/logcheck/ignore.d.server/local-heartbeat
 
 echo -n "detecting report level: "
 if [ -f /etc/X11/xinit/xinitrc ]; then
