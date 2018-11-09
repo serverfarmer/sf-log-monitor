@@ -90,6 +90,10 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: Network interface NamePolicy= disabled on kernel command line, ignoring\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Removed session [a-z0-9]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: New session [a-f0-9]+ of user [a-z0-9-]+\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Positive Trust Anchors:$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: \. IN DS [0-9]+ 8 2 [0-9a-f]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Negative trust anchors: 10\.in-addr\.arpa 16\.172\.in-addr\.arpa 17\.172\.in-addr\.arpa 18\.172\.in-addr\.arpa 19\.172\.in-addr\.arpa 20\.172\.in-addr\.arpa 21\.172\.in-addr\.arpa 22\.172\.in-addr\.arpa 23\.172\.in-addr\.arpa 24\.172\.in-addr\.arpa 25\.172\.in-addr\.arpa 26\.172\.in-addr\.arpa 27\.172\.in-addr\.arpa 28\.172\.in-addr\.arpa 29\.172\.in-addr\.arpa 30\.172\.in-addr\.arpa 31\.172\.in-addr\.arpa 168\.192\.in-addr.arpa d\.f\.ip6\.arpa corp home internal intranet lan local private test$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Using system hostname '[a-z0-9.-]+'\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: message repeated [0-9]+ times: \[ Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP\.\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: message repeated [0-9]+ times: \[ Reloading\.\]$
