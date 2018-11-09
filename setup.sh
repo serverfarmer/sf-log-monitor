@@ -18,6 +18,13 @@ echo "setting up custom ignoring rules for logcheck"
 cp -f /opt/farm/ext/log-monitor/rules/local-farmer.tpl /etc/logcheck/ignore.d.server/local-farmer
 cp -f /opt/farm/ext/log-monitor/rules/local-heartbeat.tpl /etc/logcheck/ignore.d.server/local-heartbeat
 
+if [ ! -d /opt/farm/ext/firewall ]; then
+	cp -f /opt/farm/ext/log-monitor/rules/local-nofirewall.tpl /etc/logcheck/ignore.d.server/local-nofirewall
+else if [ -f /etc/logcheck/ignore.d.server/local-nofirewall ]; then
+	echo "firewall extension present, removing local-nofirewall rules"
+	rm -f /etc/logcheck/ignore.d.server/local-nofirewall
+fi
+
 echo -n "detecting report level: "
 if [ -f /etc/X11/xinit/xinitrc ]; then
 	level="workstation"
