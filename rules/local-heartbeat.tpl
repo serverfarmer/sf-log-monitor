@@ -5,3 +5,4 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dovecot: (imap|pop3)-login: Disconnected \((no auth attempts in|disconnected before greeting, waited|disconnected before auth was ready, waited) 0 secs\): user=<>, rip=127\.0\.0\.1, lip=127\.0\.0\.1, (secured|TLS handshaking: Disconnected), session=<[a-zA-Z0-9/+]+>$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ pure-ftpd: \(\?@(localhost|127.0.0.1)\) \[INFO\] Logout\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ postfix/smtpd\[[0-9]+\]: disconnect from localhost(.localdomain)?\[127.0.0.1\] commands=0/0$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ epmd: epmd: got partial packet only on file descriptor [0-9]+ \(0\)$
