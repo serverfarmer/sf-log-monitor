@@ -20,6 +20,9 @@ cp -f /opt/farm/ext/log-monitor/rules/local-heartbeat.tpl /etc/logcheck/ignore.d
 
 if [ ! -d /opt/farm/ext/firewall ]; then
 	cp -f /opt/farm/ext/log-monitor/rules/local-nofirewall.tpl /etc/logcheck/ignore.d.server/local-nofirewall
+elif [ -f /etc/local/.config/logcheck.nofirewall ]; then
+	echo "firewall extension present, but logcheck.nofirewall enabled"
+	cp -f /opt/farm/ext/log-monitor/rules/local-nofirewall.tpl /etc/logcheck/ignore.d.server/local-nofirewall
 elif [ -f /etc/logcheck/ignore.d.server/local-nofirewall ]; then
 	echo "firewall extension present, removing local-nofirewall rules"
 	rm -f /etc/logcheck/ignore.d.server/local-nofirewall
