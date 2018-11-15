@@ -8,4 +8,5 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: fatal: Unable to negotiate with [0-9.]+ port [0-9]+: no matching (cipher|key exchange method|host key type) found\. Their offer: [0-9a-z,.@-]+ \[preauth\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: fatal: no hostkey alg \[preauth\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: fatal: Read from socket failed: Connection reset by peer \[preauth\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: dispatch_protocol_error: type [0-9]+ seq [0-9]+ \[preauth\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ postfix/smtpd\[[0-9]+\]: disconnect from [a-zA-Z0-9.-]+\[(unknown|[0-9.]+)\](.*)? commands=[0-9/]+$

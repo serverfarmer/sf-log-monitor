@@ -5,11 +5,11 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snmpd\[[0-9]+\]: ipSystemStatsTable node ipSystemStatsOutFragOKs not implemented: skipping$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snmpd\[[0-9]+\]: error on subcontainer 'ia_addr' insert \(-1\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: subsystem request for sftp by user (hudson|jenkins)$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: (error: )?Received disconnect from [0-9.]+ port [0-9]+:[0-9]+: disconnected by user$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: (error: )?Received disconnect from [0-9.]+ port [0-9]+:[0-9]+: (disconnected by user|Closed due to user request\.)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Accepted publickey for [a-z0-9-]+ from [0-9.]+ port [0-9]+ ssh2: (RSA|DSA) [0-9a-zA-Z:+/]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Postponed publickey for [a-z0-9-]+ from [0-9.]+ port [0-9]+ ssh2 \[preauth\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Disconnecting: Too many authentication failures \[preauth\]$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Disconnected from( user (root|backup))? [0-9.]+ port [0-9]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Disconnected from( user (root|backup|circleci))? [0-9.]+ port [0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Timeout, client not responding[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sftp-server\[[0-9]+\]: error: process_write: write failed$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: DHCP(NAK|ACK|OFFER) (of [.0-9]{7,15} )?from [.0-9]{7,15}$
@@ -35,7 +35,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] (eth0|veth[0-9a-zA-Z]+): renamed from (eth0|veth[0-9a-zA-Z]+)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] aufs au_opts_verify:[0-9]+:(docker|dockerd)\[[0-9]+\]: dirperm1 breaks the protection by the permission bits on the lower branch$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] kauditd_printk_skb: [0-9]+ callbacks suppressed$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="shim docker-containerd-shim started" address="/containerd-shim/moby/[0-9a-f]+/shim.sock" debug=false( module="containerd/tasks")? pid=[0-9]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="shim docker-containerd-shim started" address="/containerd-shim/moby/[0-9a-f]+/shim\.sock" debug=false( module="containerd/tasks")? pid=[0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="shim reaped" id=[0-9a-f]+( module="containerd/tasks")?$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="Container [0-9a-f]+ failed to exit within [0-9]+ seconds of signal 15 - using the force"$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="Layer sha256:[0-9a-f]+ cleaned up"$
@@ -46,6 +46,8 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ libvirtd\[[0-9]+\]: message repeated [0-9]+ times: \[ ethtool ioctl error: No such device\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ avahi-daemon\[[0-9]+\]: Invalid response packet from host [0-9a-f.:]+.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ avahi-daemon\[[0-9]+\]: message repeated [0-9]+ times: \[ Invalid response packet from host [0-9a-f.:]+.\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: message repeated [0-9]+ times: \[ \[system\] Reloaded configuration\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Reloaded configuration$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Activating service name='[0-9a-z._]+' \(using servicehelper\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus(-daemon)?\[[0-9]+\]: \[system\] Successfully activated service '[0-9a-z._]+'$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus-daemon\[[0-9]+\]: \[system\] Activating via systemd: service name='[0-9a-z._]+' unit='[0-9a-z.-]+' requested by '[0-9.:]+' \(uid=0 pid=[0-9]+ comm="/usr/sbin/NetworkManager --no-daemon " label="unconfined"\)$
