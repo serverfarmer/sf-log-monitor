@@ -1,5 +1,5 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ /USR/SBIN/CRON\[[0-9]+\]: \(CRON\) error \(grandchild #[0-9]+ failed with exit status 1\)$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ CRON\[[0-9]+\]: message repeated [0-9]+ times: \[ \(root\) CMD \(/opt/farm/ext/[a-z0-9-]+/cron/[a-z0-9-]+\.sh\)\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ CRON\[[0-9]+\]: message repeated [0-9]+ times: \[ \(root\) CMD \(/opt/(farm/ext/[a-z0-9-]+|heartbeat/scripts)/cron/[a-z0-9-]+\.sh\)\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ CRON\[[0-9]+\]: message repeated [0-9]+ times: \[ \(root\) CMD \(command -v debian-sa1 > /dev/null && debian-sa1 1 1\)\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snmpd\[[0-9]+\]: last message repeated [0-9]+ times$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snmpd\[[0-9]+\]: ipSystemStatsTable node ipSystemStatsOutFragOKs not implemented: skipping$
