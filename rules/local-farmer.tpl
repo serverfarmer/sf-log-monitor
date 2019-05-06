@@ -25,6 +25,9 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ postfix/discard\[[0-9]+\]: [0-9A-Z]+: to=<[a-z0-9\@.-]+>, (orig_to=<[a-z0-9\@.-]+>, )?relay=none, delay=[0-9.]+, delays=[0-9.]+/[0-9.]+/0/[0-9.]+, dsn=2\.0\.0, status=sent \([a-z0-9.-]+\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ ureadahead\[[0-9]+\]: ureadahead:[0-9a-zA-Z@\/.:#_-]*: (Ignored relative path|Ignoruj względne ścieżki)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ ureadahead\[[0-9]+\]: message repeated [0-9]+ times: \[ ureadahead:[0-9a-zA-Z@\/.:_-]*: (Ignored relative path|Ignoruj względne ścieżki)\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] sysctl_ibrs_enabled = 0, sysctl_ibpb_enabled = 0$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] read cpu [0-9]+ ibrs val 0$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] use_ibrs = [0-9]+, use_ibpb = [0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] Process accounting resumed$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] nf_conntrack: automatic helper assignment is deprecated and it will be removed soon\. Use the iptables CT target to attach helpers instead\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] nf_conntrack: falling back to vmalloc\.$
@@ -50,7 +53,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Reloaded configuration$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Activating service name='[0-9a-z._]+' \(using servicehelper\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus(-daemon)?\[[0-9]+\]: \[system\] Successfully activated service '[0-9a-z._]+'$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus-daemon\[[0-9]+\]: \[system\] Activating via systemd: service name='[0-9a-z._]+' unit='[0-9a-z.-]+' requested by '[0-9.:]+' \(uid=0 pid=[0-9]+ comm="/usr/sbin/NetworkManager --no-daemon " label="unconfined"\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus(-daemon)?\[[0-9]+\]: \[system\] Activating via systemd: service name='[0-9a-z._]+' unit='[0-9a-z.-]+'( requested by '[0-9.:]+' \(uid=0 pid=[0-9]+ comm="([0-9a-zA-Z/\ -]+)?" label="unconfined"\))?$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ nm-dispatcher: req:[0-9]+ 'dhcp4-change' \[[0-9a-z.]+\]: new request \([0-9]+ scripts\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ nm-dispatcher: req:[0-9]+ 'dhcp4-change' \[[0-9a-z.]+\]: start running ordered scripts\.\.\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info> \([0-9a-z]+\): DHCPv4 state changed renew -> renew$
@@ -83,6 +86,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Using system hostname '[a-z0-9.-]+'\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: message repeated [0-9]+ times: \[ Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP\.\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-timesyncd\[[0-9]+\]: Timed out waiting for reply from [0-9.]+:123 \([0-9a-z.]+\)\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: message repeated [0-9]+ times: \[ Reloading\.\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Reloading|Reexecuting)\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Received SIGRTMIN\+24 from PID [0-9]+ \((kill|n/a)\)\.$
@@ -96,7 +100,8 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) User Manager for UID [0-9]+[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) Daily apt( download)?( upgrade and clean)? activities[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (System Logging Service|Cleanup of Temporary Directories|Clean php session files|Automatically refresh installed snaps|ACPI event daemon)[.]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (Network Time Synchronization|Network Name Resolution|udev Kernel Device Manager|Message of the Day|Server Farmer Firewall)[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (Time & Date Service|Network Time Synchronization|Network Name Resolution|udev Kernel Device Manager|Message of the Day|Server Farmer Firewall)[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (Unattended Upgrades Shutdown)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) GnuPG cryptographic agent( and passphrase cache)?( \((restricted|ssh-agent emulation|access for web browsers)\))?\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) (GnuPG network certificate management daemon|CUPS Scheduler)\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Reached|Stopped) target [a-zA-Z ]+\.$
