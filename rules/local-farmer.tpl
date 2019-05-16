@@ -38,6 +38,9 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] (eth0|veth[0-9a-zA-Z]+): renamed from (eth0|veth[0-9a-zA-Z]+)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] aufs au_opts_verify:[0-9]+:(docker|dockerd)\[[0-9]+\]: dirperm1 breaks the protection by the permission bits on the lower branch$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] kauditd_printk_skb: [0-9]+ callbacks suppressed$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[0-9.]+\] audit: type=1400 audit\([0-9.:]+\): apparmor="DENIED" operation="mount" info="failed flags match" error=-13 profile="lxc-container-default-cgns" name="/" pid=[0-9]+ comm="\([0-9a-zA-Z/._-]+\)" flags="rw, rslave"$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[0-9.]+\] audit: type=1400 audit\([0-9.:]+\): apparmor="DENIED" operation="ptrace" profile="lxc-container-default-cgns" pid=[0-9]+ comm="[0-9a-zA-Z/._-]+" requested_mask="trace" denied_mask="trace" peer="unconfined"$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[0-9.]+\] audit: type=1400 audit\([0-9.:]+\): apparmor="STATUS" operation="profile_replace"( info="same as current profile, skipping")? profile="unconfined" name="[0-9a-zA-Z/._-]+" pid=[0-9]+ comm="apparmor_parser"$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="shim docker-containerd-shim started" address="/containerd-shim/moby/[0-9a-f]+/shim\.sock" debug=false( module="containerd/tasks")? pid=[0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="shim reaped" id=[0-9a-f]+( module="containerd/tasks")?$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="Container [0-9a-f]+ failed to exit within [0-9]+ seconds of signal 15 - using the force"$
