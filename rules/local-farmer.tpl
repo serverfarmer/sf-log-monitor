@@ -73,6 +73,8 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info>  \[[0-9.]+\] dhcp4 \([0-9a-z.]+\): state changed (unknown|bound|expire) -> (bound|expire|done)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: CRON-APT LINE: /usr/bin/apt-get -o quiet=1 dist-upgrade -d -y -o APT::Get::Show-Upgraded=true$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Calculating upgrade\.\.\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: The following package was automatically installed and is no longer required:$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Use 'apt autoremove' to remove it\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PAM-CGFS\[[0-9]+\]: Failed to create a cgroup for user root\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PAM-CGFS\[[0-9]+\]: Failed to enter user cgroup /user/root/0 for user root\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PAM-CGFS\[[0-9]+\]: cgroupfs v1: Failed to enter cgroups\.$
@@ -90,7 +92,13 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Using system hostname '[a-z0-9.-]+'\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: message repeated [0-9]+ times: \[ Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP\.\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-timesyncd\[[0-9]+\]: Network configuration changed, trying to establish connection\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-timesyncd\[[0-9]+\]: Synchronized to time server [0-9.]+:123 \([0-9a-z.]+\)\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-timesyncd\[[0-9]+\]: Timed out waiting for reply from [0-9.]+:123 \([0-9a-z.]+\)\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd-wait-online\[[0-9]+\]: Event loop failed: Connection timed out$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ apt-helper\[[0-9]+\]: E: (Sub-process|Podproces) /lib/systemd/systemd-networkd-wait-online .* \(1\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: gpgconf: running /usr/bin/gpg-agent failed \(exitcode=2\): General error$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: gpgconf: fatal error \(exit status 1\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: message repeated [0-9]+ times: \[ Reloading\.\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Reloading|Reexecuting)\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Received SIGRTMIN\+24 from PID [0-9]+ \((kill|n/a)\)\.$
@@ -105,7 +113,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) Daily apt( download)?( upgrade and clean)? activities[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (System Logging Service|Cleanup of Temporary Directories|Clean php session files|Automatically refresh installed snaps|ACPI event daemon)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (Time & Date Service|Network Time Synchronization|Network Name Resolution|udev Kernel Device Manager|Message of the Day|Server Farmer Firewall)[.]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (Unattended Upgrades Shutdown)[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (Unattended Upgrades Shutdown|Sockets)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) GnuPG cryptographic agent( and passphrase cache)?( \((restricted|ssh-agent emulation|access for web browsers)\))?\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) (GnuPG network certificate management daemon|CUPS Scheduler)\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Reached|Stopped) target [a-zA-Z ]+\.$
