@@ -30,6 +30,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] read cpu [0-9]+ ibrs val 0$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] use_ibrs = [0-9]+, use_ibpb = [0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] Process accounting resumed$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] systemd: [0-9]+ output lines suppressed due to ratelimiting$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] nf_conntrack: automatic helper assignment is deprecated and it will be removed soon\. Use the iptables CT target to attach helpers instead\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] nf_conntrack: falling back to vmalloc\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] IPv6: ADDRCONF\(NETDEV_UP\): (veth|br-)[0-9a-zA-Z]+: link is not ready$
@@ -102,7 +103,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: message repeated [0-9]+ times: \[ Reloading\.\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Reloading|Reexecuting)\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Received SIGRTMIN\+24 from PID [0-9]+ \((kill|n/a)\)\.$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: user@0\.service: Killing process [0-9]+ \(kill\) with signal SIGKILL\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: user@(0|34|65534)\.service: Killing process [0-9]+ \(kill\) with signal SIGKILL\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Created|Removed) slice user-[0-9]+\.slice\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Created|Removed) slice User Slice of [a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Stopping) user-[0-9]+\.slice\.$
@@ -136,6 +137,8 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ linux-boot-prober: debug: linux detected by /usr/lib/linux-boot-probes/[a-z0-9-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ get-external-ip: failed to obtain external IP address, provider: [0-9a-z-]+, empty or invalid response$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ debsums: missing file /usr/share/locale/pl/LC_MESSAGES/mc\.mo \(from mc-data package\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (rkhunter|Rootkit Hunter): Rootkit hunter check started \(version [0-9.]+\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (rkhunter|Rootkit Hunter): Scanning took( [0-9]+ minute(s)? and)? [0-9]+ second(s)?$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (rkhunter|Rootkit Hunter): Please inspect this machine, because it may be infected\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]+: action 'action 10' suspended, next retry is [0-9a-zA-Z: ]+ \[v[0-9.]+ try http://www.rsyslog.com/e/[0-9]+ \]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]+: action 'action 17' suspended, next retry is [0-9a-zA-Z: ]+ \[try http://www.rsyslog.com/e/[0-9]+ \]$
