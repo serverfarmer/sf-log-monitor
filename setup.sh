@@ -7,7 +7,11 @@
 
 base=/opt/farm/ext/log-monitor/templates/$OSVER
 
-if [ ! -f $base/logcheck.tpl ]; then
+
+if [ "$OSTYPE" = "redhat" ]; then
+	/opt/farm/ext/packages/utils/install.sh logwatch
+	exit 0
+elif [ ! -f $base/logcheck.tpl ]; then
 	echo "skipping logcheck setup, unsupported operating system version"
 	exit 1
 fi
