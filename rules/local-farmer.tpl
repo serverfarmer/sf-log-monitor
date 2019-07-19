@@ -14,7 +14,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sftp-server\[[0-9]+\]: error: process_write: write failed$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: DHCP(NAK|ACK|OFFER) (of [.0-9]{7,15} )?from [.0-9]{7,15}$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: DHCP(REQUEST|RELEASE) (of [.0-9]{7,15} )?on [[:alnum:].-]+ to [.0-9]{7,15} port [0-9]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: DHCPREQUEST of [.0-9]{7,15} on [[:alnum:].-]+ to [.0-9]{7,15} port [0-9]+ \(xid=0x[0-9a-f]+\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: DHCPREQUEST (of|for) [.0-9]{7,15} on [[:alnum:].-]+ to [.0-9]{7,15} port [0-9]+( \(xid=0x[0-9a-f]+\))?$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: message repeated [0-9]+ times: \[ DHCPREQUEST of [.0-9]{7,15} on [[:alnum:].-]+ to [.0-9]{7,15} port [0-9]+ \(xid=0x[0-9a-f]+\)\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: bound(:| to [.0-9]{7,15} --) renewal in [0-9]+ seconds\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: XMT: Solicit on eth0, interval [0-9]+ms\.$
@@ -87,6 +87,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: Network interface NamePolicy= disabled on kernel command line, ignoring\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Removed session [a-z0-9]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: New session [a-f0-9]+ of user [a-z0-9-]+\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Session [a-f0-9]+ logged out\. Waiting for processes to exit\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Positive Trust Anchors:$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: \. IN DS [0-9]+ 8 2 [0-9a-f]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Negative trust anchors: 10\.in-addr\.arpa 16\.172\.in-addr\.arpa 17\.172\.in-addr\.arpa 18\.172\.in-addr\.arpa 19\.172\.in-addr\.arpa 20\.172\.in-addr\.arpa 21\.172\.in-addr\.arpa 22\.172\.in-addr\.arpa 23\.172\.in-addr\.arpa 24\.172\.in-addr\.arpa 25\.172\.in-addr\.arpa 26\.172\.in-addr\.arpa 27\.172\.in-addr\.arpa 28\.172\.in-addr\.arpa 29\.172\.in-addr\.arpa 30\.172\.in-addr\.arpa 31\.172\.in-addr\.arpa 168\.192\.in-addr.arpa d\.f\.ip6\.arpa corp home internal intranet lan local private test$
@@ -98,6 +99,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-timesyncd\[[0-9]+\]: Timed out waiting for reply from [0-9.]+:123 \([0-9a-z.]+\)\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd-wait-online\[[0-9]+\]: Event loop failed: Connection timed out$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ apt-helper\[[0-9]+\]: E: (Sub-process|Podproces) /lib/systemd/systemd-networkd-wait-online .* \(1\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: [a-zA-Z0-9@-]+\.(service|mount|socket|scope): Succeeded\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: gpgconf: running /usr/bin/gpg-agent failed \(exitcode=2\): General error$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: gpgconf: fatal error \(exit status 1\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: message repeated [0-9]+ times: \[ Reloading\.\]$
