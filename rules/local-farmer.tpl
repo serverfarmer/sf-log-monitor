@@ -41,14 +41,16 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] (eth0|veth[0-9a-zA-Z]+): renamed from (eth0|veth[0-9a-zA-Z]+)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] aufs au_opts_verify:[0-9]+:(docker|dockerd)\[[0-9]+\]: dirperm1 breaks the protection by the permission bits on the lower branch$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] (k)?audit(d)?_printk_skb: [0-9]+ callbacks suppressed$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] systemd-timedated[[0-9]+\]]: /etc/localtime should be a symbolic link to a timezone data file in /usr/share/zoneinfo/\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[0-9.]+\] audit: type=1400 audit\([0-9.:]+\): apparmor="DENIED" operation="mount" info="failed flags match" error=-13 profile="lxc-container-default-cgns" name="/" pid=[0-9]+ comm="\([0-9a-zA-Z/._-]+\)" flags="rw, rslave"$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[0-9.]+\] audit: type=1400 audit\([0-9.:]+\): apparmor="DENIED" operation="ptrace" profile="lxc-container-default-cgns" pid=[0-9]+ comm="[0-9a-zA-Z/._-]+" requested_mask="trace" denied_mask="trace" peer="unconfined"$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[0-9.]+\] audit: type=1400 audit\([0-9.:]+\): apparmor="STATUS" operation="profile_replace"( info="same as current profile, skipping")? profile="unconfined" name="[0-9a-zA-Z/._-]+" pid=[0-9]+ comm="apparmor_parser"$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="shim docker-containerd-shim started" address="/containerd-shim/moby/[0-9a-f]+/shim\.sock" debug=false( module="containerd/tasks")? pid=[0-9]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="shim reaped" id=[0-9a-f]+( module="containerd/tasks")?$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (dockerd|containerd)\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="shim docker-containerd-shim started" address="/containerd-shim/moby/[0-9a-f]+/shim\.sock" debug=false( module="containerd/tasks")? pid=[0-9]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (dockerd|containerd)\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="shim reaped" id=[0-9a-f]+( module="containerd/tasks")?$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="Container [0-9a-f]+ failed to exit within [0-9]+ seconds of signal 15 - using the force"$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="Layer sha256:[0-9a-f]+ cleaned up"$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete type="\*events\.TaskDelete"$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=warning msg="[0-9a-f]+ cleanup: failed to unmount IPC: umount /var/lib/docker/containers/[0-9a-f]+/mounts/shm, flags: 0x2: no such file or directory"$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ libvirtd\[[0-9]+\]: Failed to open file '/sys/class/net/veth[0-9a-zA-Z]+/operstate': No such file or directory$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ libvirtd\[[0-9]+\]: unable to read: /sys/class/net/veth[0-9a-zA-Z]+/operstate: No such file or directory$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ libvirtd\[[0-9]+\]: ethtool ioctl error: No such device$
@@ -86,6 +88,13 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd: pam_unix\(systemd-user:session\): session closed for user [a-z0-9-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: Could not generate persistent MAC address for veth[0-9a-zA-Z]+: No such file or directory$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: Network interface NamePolicy= disabled on kernel command line, ignoring\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: link_config: autonegotiation is unset or enabled, the speed and duplex are not writable\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: link_config: could not get ethtool features for veth[0-9a-zA-Z]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: Could not generate persistent MAC address for br-[0-9a-zA-Z]+: No such file or directory$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: Could not set offload features of veth[0-9a-zA-Z]+: No such device$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ networkd-dispatcher\[[0-9]+\]: WARNING:Unknown index [0-9]+ seen, reloading interface list$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ networkd-dispatcher\[[0-9]+\]: ERROR:Unknown interface index [0-9]+ seen even after reload$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd\[[0-9]+\]:: (veth|br-)[0-9a-zA-Z]+: (Lost|Gained) carrier$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Removed session [a-z0-9]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: New session [a-f0-9]+ of user [a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Session [a-f0-9]+ logged out\. Waiting for processes to exit\.$
@@ -93,6 +102,8 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: \. IN DS [0-9]+ 8 2 [0-9a-f]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Negative trust anchors: 10\.in-addr\.arpa 16\.172\.in-addr\.arpa 17\.172\.in-addr\.arpa 18\.172\.in-addr\.arpa 19\.172\.in-addr\.arpa 20\.172\.in-addr\.arpa 21\.172\.in-addr\.arpa 22\.172\.in-addr\.arpa 23\.172\.in-addr\.arpa 24\.172\.in-addr\.arpa 25\.172\.in-addr\.arpa 26\.172\.in-addr\.arpa 27\.172\.in-addr\.arpa 28\.172\.in-addr\.arpa 29\.172\.in-addr\.arpa 30\.172\.in-addr\.arpa 31\.172\.in-addr\.arpa 168\.192\.in-addr.arpa d\.f\.ip6\.arpa corp home internal intranet lan local private test$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Using system hostname '[a-z0-9.-]+'\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Using degraded feature set \(UDP\) for DNS server 213\.133\.98\.98\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Grace period over, resuming full feature set \(UDP+EDNS0\) for DNS server 213\.133\.98\.98\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-resolved\[[0-9]+\]: message repeated [0-9]+ times: \[ Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP\.\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-timesyncd\[[0-9]+\]: Network configuration changed, trying to establish connection\.$
@@ -111,7 +122,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Created|Removed) slice User Slice of (UID )?[a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Stopping) user-[0-9]+\.slice\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started) Session [a-f0-9]+ of user [a-z0-9-]+\.$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started) (Exit the Session|Certbot|ntp-systemd-netif\.service)[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started) (Exit the Session|Certbot|ntp-systemd-netif\.service|Discard unused blocks)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) User Manager for UID [0-9]+[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) Daily apt( download)?( upgrade and clean)? activities[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (System Logging Service|Cleanup of Temporary Directories|Clean php session files|Automatically refresh installed snaps|ACPI event daemon)[.]+$
@@ -122,6 +133,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Reached|Stopped) target [a-zA-Z ]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Reloading|Reloaded) Samba SMB Daemon[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Mounting|Mounted) Arbitrary Executable File Formats File System[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: proc-sys-fs-binfmt_misc\.automount: Got automount request for /proc/sys/fs/binfmt_misc, triggered by [0-9]+ \(sysctl\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Startup finished in [0-9]+ms\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Failed to reset devices\.list on /(init\.scope|user\.slice|system\.slice/[0-9a-z\\.-]+): Operation not permitted$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: [a-z.-]+\.timer: Adding [0-9a-z. ]+ random time\.$
@@ -140,6 +152,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ [a-z0-9]+-tests: debug: /dev/[a-z0-9]+ type not recognised; skipping$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ linux-boot-prober: debug: running /usr/lib/linux-boot-probes/[a-z0-9-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ linux-boot-prober: debug: linux detected by /usr/lib/linux-boot-probes/[a-z0-9-]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ fstrim\[[0-9]+\]: /: 0 B \(0 bytes\) trimmed$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ get-external-ip: failed to obtain external IP address, provider: [0-9a-z-]+, empty or invalid response$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ debsums: missing file /usr/share/locale/pl/LC_MESSAGES/mc\.mo \(from mc-data package\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (rkhunter|Rootkit Hunter): Rootkit hunter check started \(version [0-9.]+\)$
