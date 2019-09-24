@@ -45,7 +45,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[0-9.]+\] audit: type=1400 audit\([0-9.:]+\): apparmor="DENIED" operation="mount" info="failed flags match" error=-13 profile="lxc-container-default-cgns" name="/" pid=[0-9]+ comm="\([0-9a-zA-Z/._-]+\)" flags="rw, rslave"$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[0-9.]+\] audit: type=1400 audit\([0-9.:]+\): apparmor="DENIED" operation="ptrace" profile="lxc-container-default-cgns" pid=[0-9]+ comm="[0-9a-zA-Z/._-]+" requested_mask="trace" denied_mask="trace" peer="unconfined"$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[0-9.]+\] audit: type=1400 audit\([0-9.:]+\): apparmor="STATUS" operation="profile_replace"( info="same as current profile, skipping")? profile="unconfined" name="[0-9a-zA-Z/._-]+" pid=[0-9]+ comm="apparmor_parser"$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (dockerd|containerd)\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="shim docker-containerd-shim started" address="/containerd-shim/moby/[0-9a-f]+/shim\.sock" debug=false( module="containerd/tasks")? pid=[0-9]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (dockerd|containerd)\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="shim (docker-)?containerd-shim started" address="/containerd-shim/moby/[0-9a-f]+/shim\.sock" debug=false( module="containerd/tasks")? pid=[0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (dockerd|containerd)\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="shim reaped" id=[0-9a-f]+( module="containerd/tasks")?$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="Container [0-9a-f]+ failed to exit within [0-9]+ seconds of signal 15 - using the force"$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dockerd\[[0-9]+\]: time="[0-9-]+T[0-9.:+]+(Z)?" level=info msg="Layer sha256:[0-9a-f]+ cleaned up"$
@@ -94,7 +94,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: Could not set offload features of veth[0-9a-zA-Z]+: No such device$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ networkd-dispatcher\[[0-9]+\]: WARNING:Unknown index [0-9]+ seen, reloading interface list$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ networkd-dispatcher\[[0-9]+\]: ERROR:Unknown interface index [0-9]+ seen even after reload$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd\[[0-9]+\]:: (veth|br-)[0-9a-zA-Z]+: (Lost|Gained) carrier$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd\[[0-9]+\]:: (veth|br-)[0-9a-zA-Z]+: (Lost|Gained) (carrier|IPv6LL)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Removed session [a-z0-9]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: New session [a-f0-9]+ of user [a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Session [a-f0-9]+ logged out\. Waiting for processes to exit\.$
