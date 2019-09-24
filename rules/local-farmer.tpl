@@ -94,7 +94,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: Could not set offload features of veth[0-9a-zA-Z]+: No such device$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ networkd-dispatcher\[[0-9]+\]: WARNING:Unknown index [0-9]+ seen, reloading interface list$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ networkd-dispatcher\[[0-9]+\]: ERROR:Unknown interface index [0-9]+ seen even after reload$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd\[[0-9]+\]:: (veth|br-)[0-9a-zA-Z]+: (Lost|Gained) (carrier|IPv6LL)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd\[[0-9]+\]: (veth|br-)[0-9a-zA-Z]+: (Lost|Gained) (carrier|IPv6LL)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Removed session [a-z0-9]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: New session [a-f0-9]+ of user [a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Session [a-f0-9]+ logged out\. Waiting for processes to exit\.$
