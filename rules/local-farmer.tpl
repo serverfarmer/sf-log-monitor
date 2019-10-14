@@ -41,7 +41,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] (eth0|veth[0-9a-zA-Z]+): renamed from (eth0|veth[0-9a-zA-Z]+)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] aufs au_opts_verify:[0-9]+:(docker|dockerd)\[[0-9]+\]: dirperm1 breaks the protection by the permission bits on the lower branch$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] (k)?audit(d)?_printk_skb: [0-9]+ callbacks suppressed$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] systemd-timedated[[0-9]+\]]: /etc/localtime should be a symbolic link to a timezone data file in /usr/share/zoneinfo/\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] systemd-timedated[[0-9]+\]]: /etc/localtime should be a symbolic link to a time( )?zone data file in /usr/share/zoneinfo/\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[0-9.]+\] audit: type=1400 audit\([0-9.:]+\): apparmor="DENIED" operation="mount" info="failed flags match" error=-13 profile="lxc-container-default-cgns" name="/" pid=[0-9]+ comm="\([0-9a-zA-Z/._-]+\)" flags="rw, rslave"$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[0-9.]+\] audit: type=1400 audit\([0-9.:]+\): apparmor="DENIED" operation="ptrace" profile="lxc-container-default-cgns" pid=[0-9]+ comm="[0-9a-zA-Z/._-]+" requested_mask="trace" denied_mask="trace" peer="unconfined"$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[0-9.]+\] audit: type=1400 audit\([0-9.:]+\): apparmor="STATUS" operation="profile_replace"( info="same as current profile, skipping")? profile="unconfined" name="[0-9a-zA-Z/._-]+" pid=[0-9]+ comm="apparmor_parser"$
@@ -79,6 +79,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Calculating upgrade\.\.\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: The following (package was|packages were) automatically installed and (is|are) no longer required:$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Use 'apt autoremove' to remove (it|them)\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Get:[0-9]+ http://[0-9a-z./-]+ [a-z/-]+ (amd64 )?[0-9a-z.-]+ (amd64|all) [0-9a-z.~+-]+ \[[0-9]+ (B|kB|MB)\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PAM-CGFS\[[0-9]+\]: Failed to create a cgroup for user root\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PAM-CGFS\[[0-9]+\]: Failed to enter user cgroup /user/root/0 for user root\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PAM-CGFS\[[0-9]+\]: cgroupfs v1: Failed to enter cgroups\.$
@@ -125,7 +126,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started) (Exit the Session|Certbot|ntp-systemd-netif\.service|Discard unused blocks)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) User Manager for UID [0-9]+[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) Daily apt( download)?( upgrade and clean)? activities[.]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (System Logging Service|Cleanup of Temporary Directories|Clean php session files|Automatically refresh installed snaps|ACPI event daemon)[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (System Logging Service|Cleanup of Temporary Directories|Clean php session files|Automatically refresh installed snaps|ACPI event daemon|Daemon for generating UUIDs)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (Time & Date Service|Network Time Synchronization|Network Name Resolution|udev Kernel Device Manager|Message of the Day|Server Farmer Firewall)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (Unattended Upgrades Shutdown|Sockets|LSB: automatic crash report generation|Rotate log files|Daily man-db regeneration|D-Bus User Message Bus Socket)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) GnuPG cryptographic agent( and passphrase cache)?( \((restricted|ssh-agent emulation|access for web browsers)\))?\.$
@@ -136,6 +137,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: proc-sys-fs-binfmt_misc\.automount: Got automount request for /proc/sys/fs/binfmt_misc, triggered by [0-9]+ \(sysctl\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Startup finished in [0-9]+ms\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Failed to reset devices\.list on /(init\.scope|user\.slice|system\.slice/[0-9a-z\\.-]+): Operation not permitted$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Failed to canonicalize path /home/(.+): Permission denied$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: [a-z.-]+\.timer: Adding [0-9a-z. ]+ random time\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ apport\[[0-9]+\]:  \* Starting automatic crash report generation: apport$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ apport\[[0-9]+\]:    \.\.\.done\.$
