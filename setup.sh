@@ -46,3 +46,8 @@ save_original_config $file
 cat $base/logcheck.tpl |sed -e s/%%domain%%/`external_domain`/g -e s/%%level%%/$level/g >$file
 chown root:logcheck $file
 chmod 0640 $file
+
+if [ -f /etc/default/motd-news ]; then
+	echo "disabling ubuntu motd"
+	sed -i 's/^ENABLED.*/ENABLED=0/' /etc/default/motd-news
+fi
