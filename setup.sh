@@ -8,7 +8,7 @@
 base=/opt/farm/ext/log-monitor/templates/$OSVER
 
 
-if [ "$OSTYPE" = "redhat" ]; then
+if [ "$OSTYPE" = "redhat" ] || [ "$OSTYPE" = "amazon" ]; then
 	/opt/farm/ext/packages/utils/install.sh logwatch
 	exit 0
 elif [ ! -f $base/logcheck.tpl ]; then
@@ -21,6 +21,12 @@ fi
 echo "setting up custom ignoring rules for logcheck"
 cp -f /opt/farm/ext/log-monitor/rules/local-farmer.tpl /etc/logcheck/ignore.d.server/local-farmer
 cp -f /opt/farm/ext/log-monitor/rules/local-heartbeat.tpl /etc/logcheck/ignore.d.server/local-heartbeat
+
+# Amazon EC2, but not ECS/Batch/other
+if [ ! -f /etc/image-id ] && [ -d /sys/class/dmi/id ] && grep -qi amazon /sys/class/dmi/id/* 2>/dev/null; then
+	echo "setting up Amazon EC2-specific ignoring rules for logcheck"
+	cp -f /opt/farm/ext/log-monitor/rules/local-amazon.tpl /etc/logcheck/ignore.d.server/local-amazon
+fi
 
 if [ ! -d /opt/farm/ext/firewall ]; then
 	cp -f /opt/farm/ext/log-monitor/rules/local-nofirewall.tpl /etc/logcheck/ignore.d.server/local-nofirewall
