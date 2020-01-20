@@ -1,5 +1,6 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sendmail\[[0-9]+\]: [a-zA-Z0-9]+: localhost \[127\.0\.0\.1\] did not issue MAIL/EXPN/VRFY/ETRN during connection to MTA$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ anacron\[[0-9]+\]: Anacron started on [0-9-]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ auditd\[[0-9]+\]: Audit daemon rotating log files$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ run-parts\(/etc/cron\.(hourly|daily)\)\[[0-9]+(\])?(:)? (starting|finished) (0anacron|logrotate|man-db\.cron)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ CROND\[[0-9]+\]: \(root\) CMD \(run-parts /etc/cron\.hourly\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ CROND\[[0-9]+\]: \(root\) CMD \(/sbin/start --quiet update-motd\)$
