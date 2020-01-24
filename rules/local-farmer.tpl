@@ -92,7 +92,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Calculating upgrade\.\.\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: The following (package was|packages were) automatically installed and (is|are) no longer required:$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Use 'apt autoremove' to remove (it|them)\.$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Get:[0-9]+ http(s)?://[0-9a-z./_-]+ [a-z/-]+ (amd64 )?[0-9a-z.-]+ (amd64|all) [0-9a-z.:~+-]+ \[[0-9.]+ (B|kB|MB)\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Get:[0-9]+ http(s)?://[0-9a-z./_-]+ [a-z/-]+ ((amd64|armel|armhf) )?[0-9a-z.-]+ (amd64|armel|armhf|all) [0-9a-z.:~+-]+ \[[0-9.]+ (B|kB|MB)\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PAM-CGFS\[[0-9]+\]: Failed to create a cgroup for user root\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PAM-CGFS\[[0-9]+\]: Failed to enter user cgroup /user/root/0 for user root\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PAM-CGFS\[[0-9]+\]: cgroupfs v1: Failed to enter cgroups\.$
