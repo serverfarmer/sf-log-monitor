@@ -178,4 +178,4 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (rkhunter|Rootkit Hunter): Please inspect this machine, because it may be infected\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]+: action 'action 10' suspended, next retry is [0-9a-zA-Z: ]+ \[v[0-9.]+ try http://www.rsyslog.com/e/[0-9]+ \]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]+: action 'action 17' suspended, next retry is [0-9a-zA-Z: ]+ \[try http://www.rsyslog.com/e/[0-9]+ \]$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]+: action 'action [0-9]+' resumed \(module 'builtin:om(fwd|pipe)'\) \[v[0-9.]+ try http://www.rsyslog.com/e/[0-9]+ \]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]*: action 'action [0-9]+' resumed \(module 'builtin:om(fwd|pipe)'\) \[v[0-9.]+ try http://www.rsyslog.com/e/[0-9]+ \]$
