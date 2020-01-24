@@ -34,7 +34,10 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\]  [0-9a-f]{16} [0-9a-f]{16} [0-9a-f]{16} [0-9a-f]{16}$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] RIP: [0-9a-f]+:          \(null\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] RIP: [0-9a-f]+:0x[0-9a-f]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] RSP: [0-9a-f:]+ EFLAGS: [0-9a-f]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] RIP: [0-9a-f]+:[0-9a-zA-Z._]+\+0x[0-9a-f]+/0x[0-9a-f]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] RSP: [0-9a-f:]+ EFLAGS: [0-9a-f]+( ORIG_RAX: [0-9a-f]+)?$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] (RAX|RDX|RBP|R10|R13|CR2): [0-9a-f]+ (RBX|RSI|R08|R11|R14|CR3): [0-9a-f]+ (RCX|RDI|R09|R12|R15|CR4): [0-9a-f]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] Code: [0-9a-f ]+ <[0-9a-f]+> [0-9a-f ]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] memory: usage [0-9]+kB, limit [0-9]+kB, failcnt [0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] memory\+swap: usage [0-9]+kB, limit [0-9]+kB, failcnt [0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] kmem: usage [0-9]+kB, limit [0-9]+kB, failcnt [0-9]+$
