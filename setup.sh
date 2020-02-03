@@ -1,8 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 . /opt/farm/scripts/init
-. /opt/farm/scripts/functions.custom
 . /opt/farm/scripts/functions.install
-
 
 
 base=/opt/farm/ext/log-monitor/templates/$OSVER
@@ -47,9 +45,10 @@ fi
 echo $level
 
 echo "setting up logcheck configuration"
+domain=`/opt/farm/config/get-external-domain.sh`
 file=/etc/logcheck/logcheck.conf
 save_original_config $file
-cat $base/logcheck.tpl |sed -e s/%%domain%%/`external_domain`/g -e s/%%level%%/$level/g >$file
+cat $base/logcheck.tpl |sed -e s/%%domain%%/$domain/g -e s/%%level%%/$level/g >$file
 chown root:logcheck $file
 chmod 0640 $file
 
