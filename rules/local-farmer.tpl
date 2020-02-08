@@ -41,6 +41,11 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] memory: usage [0-9]+kB, limit [0-9]+kB, failcnt [0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] memory\+swap: usage [0-9]+kB, limit [0-9]+kB, failcnt [0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] kmem: usage [0-9]+kB, limit [0-9]+kB, failcnt [0-9]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9]+ total pagecache pages$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9]+ pages in swap cache$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] Swap cache stats: add [0-9]+, delete [0-9]+, find [0-9/]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] (Free|Total) swap[ ]+= [0-9]+kB$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9]+ pages (RAM|reserved|HighMem/MovableOnly)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9a-z-]+ cpuset=[0-9a-f]+ mems_allowed=0$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] oom_reaper: reaped process [0-9]+ \([0-9a-z-]+\), now anon-rss:[0-9]+kB, file-rss:[0-9]+kB, shmem-rss:[0-9]+kB$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] sysctl_ibrs_enabled = 0, sysctl_ibpb_enabled = 0$
