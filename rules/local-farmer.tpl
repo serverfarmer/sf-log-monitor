@@ -32,11 +32,12 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] Call Trace:$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\]  (\[<[0-9a-f]+>\] )?(\? )?[0-9a-zA-Z._]+\+0x[0-9a-f]+/0x[0-9a-f]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\]  [0-9a-f]{16} [0-9a-f]{16} [0-9a-f]{16} [0-9a-f]{16}$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\]  <(/)?IRQ>$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] RIP: [0-9a-f]+:          \(null\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] RIP: [0-9a-f]+:0x[0-9a-f]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] RIP: [0-9a-f]+:[0-9a-zA-Z._]+\+0x[0-9a-f]+/0x[0-9a-f]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] RSP: [0-9a-f:]+ EFLAGS: [0-9a-f]+( ORIG_RAX: [0-9a-f]+)?$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] (RAX|RDX|RBP|R10|R13|CR2): [0-9a-f]+ (RBX|RSI|R08|R11|R14|CR3): [0-9a-f]+ (RCX|RDI|R09|R12|R15|CR4): [0-9a-f]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] (RAX|RDX|RBP|R10|R13|CR2|DR0|DR3): [0-9a-f]+ (RBX|RSI|R08|R11|R14|CR3|DR1|DR6): [0-9a-f]+ (RCX|RDI|R09|R12|R15|CR4|DR2|DR7): [0-9a-f]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] Code: [0-9a-f ]+ <[0-9a-f]+> [0-9a-f ]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] memory: usage [0-9]+kB, limit [0-9]+kB, failcnt [0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] memory\+swap: usage [0-9]+kB, limit [0-9]+kB, failcnt [0-9]+$
@@ -45,7 +46,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9]+ pages in swap cache$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] Swap cache stats: add [0-9]+, delete [0-9]+, find [0-9/]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] (Free|Total) swap[ ]+= [0-9]+kB$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9]+ pages (RAM|reserved|HighMem/MovableOnly)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9]+ pages (RAM|reserved|hwpoisoned|HighMem/MovableOnly)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9a-z-]+ cpuset=[0-9a-f]+ mems_allowed=0$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] oom_reaper: reaped process [0-9]+ \([0-9a-z-]+\), now anon-rss:[0-9]+kB, file-rss:[0-9]+kB, shmem-rss:[0-9]+kB$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] sysctl_ibrs_enabled = 0, sysctl_ibpb_enabled = 0$
@@ -100,7 +101,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Calculating upgrade\.\.\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: The following (package was|packages were) automatically installed and (is|are) no longer required:$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Use 'apt autoremove' to remove (it|them)\.$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Get:[0-9]+ http(s)?://[0-9a-z./_-]+ [a-z/-]+ ((amd64|armel|armhf) )?[0-9a-z.-]+ (amd64|armel|armhf|all) [0-9a-z.:~+-]+ \[[0-9.]+ (B|kB|MB)\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Get:[0-9]+ http(s)?://[0-9a-zA-Z./_-]+ [a-z/-]+ ((amd64|armel|armhf) )?[0-9a-z.-]+ (amd64|armel|armhf|all) [0-9a-z.:~+-]+ \[[0-9.]+ (B|kB|MB)\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PAM-CGFS\[[0-9]+\]: Failed to create a cgroup for user root\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PAM-CGFS\[[0-9]+\]: Failed to enter user cgroup /user/root/0 for user root\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PAM-CGFS\[[0-9]+\]: cgroupfs v1: Failed to enter cgroups\.$
@@ -116,7 +117,9 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: Could not set offload features of veth[0-9a-zA-Z]+: No such device$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ networkd-dispatcher\[[0-9]+\]: WARNING:Unknown index [0-9]+ seen, reloading interface list$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ networkd-dispatcher\[[0-9]+\]: ERROR:Unknown interface index [0-9]+ seen even after reload$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd\[[0-9]+\]: (veth|br-)[0-9a-zA-Z]+: (Lost|Gained) (carrier|IPv6LL)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd\[[0-9]+\]: Enumeration completed$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd\[[0-9]+\]: (docker|ens|veth|br-)[0-9a-zA-Z]+: (Lost|Gained) (carrier|IPv6LL)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd\[[0-9]+\]: (docker|lo|veth|br-)[0-9a-zA-Z]+: Link is not managed by us$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Removed session [a-z0-9]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: New session [a-f0-9]+ of user [a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Session [a-f0-9]+ logged out\. Waiting for processes to exit\.$
@@ -148,7 +151,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) User Manager for UID [0-9]+[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) Daily apt( download)?( upgrade and clean)? activities[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (System Logging Service|Cleanup of Temporary Directories|Clean php session files|Automatically refresh installed snaps|ACPI event daemon|Daemon for generating UUIDs)[.]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (Time & Date Service|Network Time Synchronization|Network Name Resolution|udev Kernel Device Manager|Message of the Day|Server Farmer Firewall)[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (Time & Date Service|Network Time Synchronization|Network Name Resolution|udev Kernel Device Manager|Message of the Day|Journal Service|Server Farmer Firewall)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (Unattended Upgrades Shutdown|Sockets|LSB: automatic crash report generation|Rotate log files|Daily man-db regeneration|D-Bus User Message Bus Socket)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) GnuPG cryptographic agent( and passphrase cache)?( \((restricted|ssh-agent emulation|access for web browsers)\))?\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) (GnuPG network certificate management daemon|CUPS Scheduler|D-Bus User Message Bus Socket)\.$
@@ -184,3 +187,4 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]+: action 'action 10' suspended, next retry is [0-9a-zA-Z: ]+ \[v[0-9.]+ try http://www.rsyslog.com/e/[0-9]+ \]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]+: action 'action 17' suspended, next retry is [0-9a-zA-Z: ]+ \[try http://www.rsyslog.com/e/[0-9]+ \]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]*: action 'action [0-9]+' resumed \(module 'builtin:om(fwd|pipe)'\) \[v[0-9.]+ try http://www.rsyslog.com/e/[0-9]+ \]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (libapache2-mod-)?php[0-9.]+(-(cli|common|curl|gd|json|mbstring|mysql|opcache|readline|xml))?: php_invoke (calendar|ctype|curl|dom|exif|fileinfo|ftp|gd|gettext|iconv|json|mbstring|mysqli|mysqlnd|opcache|pdo|pdo_mysql|phar|posix|readline|shmop|simplexml|sockets|sysvmsg|sysvsem|sysvshm|tokenizer|wddx|xml|xmlreader|xmlwriter|xsl|zip): already enabled for PHP [0-9.]+ (cli|apache2) (sapi|SAPI)$
