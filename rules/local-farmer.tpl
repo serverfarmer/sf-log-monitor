@@ -28,7 +28,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ ureadahead\[[0-9]+\]: ureadahead:[0-9a-zA-Z@\/.:#_-]*: (Ignored relative path|Ignoruj względne ścieżki)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ ureadahead\[[0-9]+\]: message repeated [0-9]+ times: \[ ureadahead:[0-9a-zA-Z@\/.:_-]*: (Ignored relative path|Ignoruj względne ścieżki)\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] \[ pid \]   uid  tgid total_vm      rss nr_ptes nr_pmds swapents oom_score_adj name$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] \[[ ]*[0-9]+\] [0-9 ]+             0 [a-z0-9-]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] \[[ ]*[0-9]+\] [0-9 -]+ [a-z0-9\(\).-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] Call Trace:$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\]  (\[<[0-9a-f]+>\] )?(\? )?[0-9a-zA-Z._]+\+0x[0-9a-f]+/0x[0-9a-f]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\]  [0-9a-f]{16} [0-9a-f]{16} [0-9a-f]{16} [0-9a-f]{16}$
@@ -46,8 +46,8 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9]+ pages in swap cache$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] Swap cache stats: add [0-9]+, delete [0-9]+, find [0-9/]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] (Free|Total) swap[ ]+= [0-9]+kB$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9]+ pages (RAM|reserved|hwpoisoned|HighMem/MovableOnly)$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9a-z-]+ cpuset=[0-9a-f]+ mems_allowed=0$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9]+ pages (RAM|reserved|cma reserved|hwpoisoned|HighMem/MovableOnly)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9a-z-]+ cpuset=[0-9a-f/]+ mems_allowed=0$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] oom_reaper: reaped process [0-9]+ \([0-9a-z-]+\), now anon-rss:[0-9]+kB, file-rss:[0-9]+kB, shmem-rss:[0-9]+kB$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] sysctl_ibrs_enabled = 0, sysctl_ibpb_enabled = 0$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] read cpu [0-9]+ ibrs val 0$
@@ -187,4 +187,4 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]+: action 'action 10' suspended, next retry is [0-9a-zA-Z: ]+ \[v[0-9.]+ try http://www.rsyslog.com/e/[0-9]+ \]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]+: action 'action 17' suspended, next retry is [0-9a-zA-Z: ]+ \[try http://www.rsyslog.com/e/[0-9]+ \]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]*: action 'action [0-9]+' resumed \(module 'builtin:om(fwd|pipe)'\) \[v[0-9.]+ try http://www.rsyslog.com/e/[0-9]+ \]$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (libapache2-mod-)?php[0-9.]+(-(cli|common|curl|gd|json|mbstring|mysql|opcache|readline|xml))?: php_invoke (calendar|ctype|curl|dom|exif|fileinfo|ftp|gd|gettext|iconv|json|mbstring|mysqli|mysqlnd|opcache|pdo|pdo_mysql|phar|posix|readline|shmop|simplexml|sockets|sysvmsg|sysvsem|sysvshm|tokenizer|wddx|xml|xmlreader|xmlwriter|xsl|zip): already enabled for PHP [0-9.]+ (cli|apache2) (sapi|SAPI)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (libapache2-mod-)?php[0-9.]+(-(cli|common|curl|gd|gmp|json|ldap|mbstring|mcrypt|mysql|opcache|readline|snmp|xml|xmlrpc|zip))?: php_invoke (calendar|ctype|curl|dom|exif|fileinfo|ftp|gd|gettext|gmp|iconv|json|ldap|mbstring|mcrypt|mysqli|mysqlnd|opcache|pdo|pdo_mysql|phar|posix|readline|shmop|simplexml|snmp|sockets|sysvmsg|sysvsem|sysvshm|tokenizer|wddx|xml|xmlreader|xmlrpc|xmlwriter|xsl|zip): already enabled for PHP [0-9.]+ (cgi|cli|apache2|fpm) (sapi|SAPI)$
