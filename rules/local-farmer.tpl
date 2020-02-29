@@ -28,8 +28,10 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ ureadahead\[[0-9]+\]: ureadahead:[0-9a-zA-Z@\/.:#_-]*: (Ignored relative path|Ignoruj względne ścieżki)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ ureadahead\[[0-9]+\]: message repeated [0-9]+ times: \[ ureadahead:[0-9a-zA-Z@\/.:_-]*: (Ignored relative path|Ignoruj względne ścieżki)\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] \[ pid \]   uid  tgid total_vm      rss nr_ptes nr_pmds swapents oom_score_adj name$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] \[  pid  \]   uid  tgid total_vm      rss pgtables_bytes swapents oom_score_adj name$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] \[[ ]*[0-9]+\] [0-9 -]+ [a-z0-9\(\).-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] Call Trace:$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] \[<[0-9a-f]+>\] \([0-9a-zA-Z._]+\) from \[<[0-9a-f]+>\] \([0-9a-zA-Z._]+\+0x[0-9a-f]+/0x[0-9a-f]+\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\]  (\[<[0-9a-f]+>\] )?(\? )?[0-9a-zA-Z._]+\+0x[0-9a-f]+/0x[0-9a-f]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\]  [0-9a-f]{16} [0-9a-f]{16} [0-9a-f]{16} [0-9a-f]{16}$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\]  <(/)?IRQ>$
@@ -44,6 +46,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] kmem: usage [0-9]+kB, limit [0-9]+kB, failcnt [0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9]+ total pagecache pages$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9]+ pages in swap cache$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] Tasks state \(memory values in pages\):$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] Swap cache stats: add [0-9]+, delete [0-9]+, find [0-9/]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] (Free|Total) swap[ ]+= [0-9]+kB$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] [0-9]+ pages (RAM|reserved|cma reserved|hwpoisoned|HighMem/MovableOnly)$
@@ -118,8 +121,8 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ networkd-dispatcher\[[0-9]+\]: WARNING:Unknown index [0-9]+ seen, reloading interface list$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ networkd-dispatcher\[[0-9]+\]: ERROR:Unknown interface index [0-9]+ seen even after reload$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd\[[0-9]+\]: Enumeration completed$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd\[[0-9]+\]: (docker|ens|veth|br-)[0-9a-zA-Z]+: (Lost|Gained) (carrier|IPv6LL)$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd\[[0-9]+\]: (docker|lo|veth|br-)[0-9a-zA-Z]+: Link is not managed by us$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd\[[0-9]+\]: (docker|ens|eth|veth|br-)[0-9a-zA-Z]+: (Link|Lost|Gained|Configured)( (UP|DOWN|carrier|IPv6LL))?$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd\[[0-9]+\]: (docker|eno|idrac|lo|veth|br-)[0-9a-zA-Z]+: Link is not managed by us$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Removed session [a-z0-9]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: New session [a-f0-9]+ of user [a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-logind\[[0-9]+\]: Session [a-f0-9]+ logged out\. Waiting for processes to exit\.$
