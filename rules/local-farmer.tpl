@@ -80,6 +80,16 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ libvirtd\[[0-9]+\]: unable to read: /sys/class/net/veth[0-9a-zA-Z]+/operstate: No such file or directory$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ libvirtd\[[0-9]+\]: ethtool ioctl error: No such device$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ libvirtd\[[0-9]+\]: message repeated [0-9]+ times: \[ ethtool ioctl error: No such device\]$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rngd\[[0-9]+\]: stats: bits received from HRNG source: [0-9]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rngd\[[0-9]+\]: stats: bits sent to kernel pool: [0-9]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rngd\[[0-9]+\]: stats: entropy added to kernel pool: [0-9]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rngd\[[0-9]+\]: stats: FIPS 140-2 (successes|failures): [0-9]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rngd\[[0-9]+\]: stats: FIPS 140-2\(2001-10-10\) (Monobit|Poker|Runs|Long run|Continuous run): (0|1)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rngd\[[0-9]+\]: stats: HRNG source speed: \(min=[0-9.]+; avg=[0-9.]+; max=[0-9.]+\)Kibits/s$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rngd\[[0-9]+\]: stats: FIPS tests speed: \(min=[0-9.]+; avg=[0-9.]+; max=[0-9.]+\)Mibits/s$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rngd\[[0-9]+\]: stats: Lowest ready-buffers level: [0-9]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rngd\[[0-9]+\]: stats: Entropy starvations: 0$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rngd\[[0-9]+\]: stats: Time spent starving for entropy: \(min=0; avg=0.000; max=0\)us$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ avahi-daemon\[[0-9]+\]: Invalid response packet from host [0-9a-f.:]+.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ avahi-daemon\[[0-9]+\]: message repeated [0-9]+ times: \[ Invalid response packet from host [0-9a-f.:]+.\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: message repeated [0-9]+ times: \[ \[system\] Reloaded configuration\]$
