@@ -167,7 +167,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (Time & Date Service|Network Time Synchronization|Network Name Resolution|udev Kernel Device Manager|Message of the Day|Journal Service|Server Farmer Firewall)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) (Unattended Upgrades Shutdown|Sockets|LSB: automatic crash report generation|Rotate log files|Daily man-db regeneration|D-Bus User Message Bus Socket)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) GnuPG cryptographic agent( and passphrase cache)?( \((restricted|ssh-agent emulation|access for web browsers)\))?\.$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) (GnuPG network certificate management daemon|CUPS Scheduler|D-Bus User Message Bus Socket)\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) (GnuPG network certificate management daemon|CUPS Scheduler|D-Bus User Message Bus Socket|Unix socket for apport crash forwarding)\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Reached|Stopped) target [a-zA-Z ]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Reloading|Reloaded) Samba SMB Daemon[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Mounting|Mounted) Arbitrary Executable File Formats File System[.]+$
@@ -176,7 +176,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Failed to reset devices\.list on /(init\.scope|user\.slice|system\.slice/[0-9a-z\\.-]+): Operation not permitted$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Failed to canonicalize path /home/(.+): Permission denied$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: [a-z.-]+\.timer: Adding [0-9a-z. ]+ random time\.$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ apport\[[0-9]+\]:  \* Starting automatic crash report generation: apport$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ apport\[[0-9]+\]:  \* (Start|Stop)ing automatic crash report generation: apport$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ apport\[[0-9]+\]:    \.\.\.done\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snap\[[0-9]+\]: All snaps up-to-date\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snapd\[[0-9]+\]: [0-9.:/ ]+ snapmgr.go:[0-9]+: No snaps to auto-refresh found$
@@ -200,4 +200,4 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]+: action 'action 10' suspended, next retry is [0-9a-zA-Z: ]+ \[v[0-9.]+ try http://www.rsyslog.com/e/[0-9]+ \]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]+: action 'action 17' suspended, next retry is [0-9a-zA-Z: ]+ \[try http://www.rsyslog.com/e/[0-9]+ \]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rsyslogd[0-9-]*: action 'action [0-9]+' resumed \(module 'builtin:om(fwd|pipe)'\) \[v[0-9.]+ try http://www.rsyslog.com/e/[0-9]+ \]$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (libapache2-mod-)?php[0-9.]+(-(cli|common|curl|gd|gmp|json|ldap|mbstring|mcrypt|mysql|opcache|readline|snmp|xml|xmlrpc|zip))?: php_invoke (calendar|ctype|curl|dom|exif|fileinfo|ftp|gd|gettext|gmp|iconv|json|ldap|mbstring|mcrypt|mysqli|mysqlnd|opcache|pdo|pdo_mysql|phar|posix|readline|shmop|simplexml|snmp|sockets|sysvmsg|sysvsem|sysvshm|tokenizer|wddx|xml|xmlreader|xmlrpc|xmlwriter|xsl|zip): already enabled for PHP [0-9.]+ (cgi|cli|apache2|fpm) (sapi|SAPI)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (libapache2-mod-)?php[0-9.]+(-(cli|common|curl|fpm|gd|gmp|json|ldap|mbstring|mcrypt|mysql|opcache|readline|snmp|xml|xmlrpc|zip))?: php_invoke (calendar|ctype|curl|dom|exif|fileinfo|ftp|gd|gettext|gmp|iconv|json|ldap|mbstring|mcrypt|mysqli|mysqlnd|opcache|pdo|pdo_mysql|phar|posix|readline|shmop|simplexml|snmp|sockets|sysvmsg|sysvsem|sysvshm|tokenizer|wddx|xml|xmlreader|xmlrpc|xmlwriter|xsl|zip): already enabled for PHP [0-9.]+ (cgi|cli|apache2|fpm) (sapi|SAPI)$
