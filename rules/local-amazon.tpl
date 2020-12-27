@@ -6,6 +6,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ CROND\[[0-9]+\]: \(root\) CMD \(/sbin/start --quiet update-motd\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ CROND\[[0-9]+\]: \(root\) CMD \(/usr/sbin/awslogs-nanny > /dev/null 2>&1\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ CROND\[[0-9]+\]: \(root\) CMD \(/opt/(farm/ext/[a-z0-9-]+|heartbeat/scripts)/cron/[a-z0-9-]+\.sh\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ ec2net: \[get_meta\] Getting token for IMDSv2$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ ec2net: \[get_meta\] Trying to get http://169\.254\.169\.254/latest/meta-data/network/interfaces/macs/[0-9a-f:]+/local-ipv4s$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ ec2net: \[rewrite_aliases\] Rewriting aliases of eth0$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel: \[[ .0-9]+\] Task in /ecs/[0-9a-f-]+/[0-9a-f]+ killed as a result of limit of /ecs/[0-9a-f-]+/[0-9a-f]+$
