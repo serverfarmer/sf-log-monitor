@@ -96,7 +96,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Reloaded configuration$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Activating service name='[0-9a-z._]+' \(using servicehelper\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus(-daemon)?\[[0-9]+\]: \[system\] Successfully activated service '[0-9a-zA-Z._]+'$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus(-daemon)?\[[0-9]+\]: \[system\] Activating via systemd: service name='[0-9a-zA-Z._]+' unit='[0-9a-z.-]+'( requested by '[0-9.:]+' \(uid=0 pid=[0-9]+ comm="([0-9a-zA-Z/\ -]+)?"( label="unconfined")?\))?$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus(-daemon)?\[[0-9]+\]: \[system\] Activating via systemd: service name='[0-9a-zA-Z._]+' unit='[0-9a-z.-]+'( requested by '[0-9.:]+' \(uid=[0-9]+ pid=[0-9]+ comm="([0-9a-zA-Z/\ .-]+)?"( label="unconfined")?\))?$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus(-daemon)?\[[0-9]+\]: \[system\] Activation via systemd failed for unit '[0-9a-z.-]+': Unit [0-9a-z.-]+ not found\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PackageKit: daemon (start|quit)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ nm-dispatcher: req:[0-9]+ 'dhcp4-change' \[[0-9a-z.]+\]: new request \([0-9]+ scripts\)$
@@ -114,6 +114,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ NetworkManager\[[0-9]+\]: <info>  \[[0-9.]+\] dhcp4 \([0-9a-z.]+\): state changed (unknown|bound|expire) -> (bound|expire|done)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: CRON-APT LINE: /usr/bin/apt-get -o quiet=1 dist-upgrade -d -y -o APT::Get::Show-Upgraded=true$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Calculating upgrade\.\.\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: [0-9]+ standard security update(s)?$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: The following (package was|packages were) automatically installed and (is|are) no longer required:$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Use 'apt autoremove' to remove (it|them)\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ cron-apt: Get:[0-9]+ http(s)?://[0-9a-zA-Z./_-]+ [a-z/-]+ ((amd64|armel|armhf|i386) )?[0-9a-z.-]+ (amd64|armel|armhf|i386|all) [0-9a-zA-Z.:~+-]+ \[[0-9.]+ (B|kB|MB)\]$
@@ -163,15 +164,15 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Created|Removed) slice User Slice of (UID )?[a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Stopping) user-[0-9]+\.slice\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started) Session [a-f0-9]+ of user [a-z0-9-]+\.$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started) (Exit the Session|Certbot|ntp-systemd-netif\.service|Discard unused blocks|Ubuntu Advantage Timer for running repeated jobs)[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started) (Exit the Session|Certbot|ntp-systemd-netif\.service|Discard unused blocks)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (User Manager for UID |User Runtime Directory /run/user/)[0-9]+[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) Daily apt( download)?( upgrade and clean)? activities[.]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (System Logging Service|Cleanup of Temporary Directories|Clean php session files|Automatically refresh installed snaps|ACPI event daemon|Daemon for generating UUIDs)[.]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (Time & Date Service|Network Time Synchronization|Network Name Resolution|udev Kernel Device Manager|Message of the Day|Journal Service|Server Farmer Firewall)[.]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (Unattended Upgrades Shutdown|Sockets|LSB: automatic crash report generation|Rotate log files|Daily man-db regeneration|D-Bus User Message Bus Socket)[.]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (Exit the Session|Online ext4 Metadata Check for All Filesystems|Discard unused blocks on filesystems from /etc/fstab|Refresh fwupd metadata and update motd)[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (System Logging Service|Cleanup of Temporary Directories|Clean php session files|Automatically refresh installed snaps|ACPI event daemon|Daemon for generating UUIDs|Ubuntu Advantage APT and MOTD Messages)[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (Time & Date Service|Network Time Synchronization|Network Name Resolution|udev Kernel Device Manager|Message of the Day|Journal Service|Server Farmer Firewall|Trigger to poll for Ubuntu Pro licenses \(Only enabled on GCP LTS non-pro\))[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (Unattended Upgrades Shutdown|Sockets|LSB: automatic crash report generation|Rotate log files|Daily man-db regeneration|D-Bus User Message Bus|D-Bus User Message Bus Socket)[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (Exit the Session|Online ext4 Metadata Check for All Filesystems|Discard unused blocks on filesystems from /etc/fstab|Refresh fwupd metadata and update motd|Ubuntu Advantage Timer for running repeated jobs)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) GnuPG cryptographic agent( and passphrase cache)?( \((restricted|ssh-agent emulation|access for web browsers)\))?\.$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) (GnuPG network certificate management daemon|CUPS Scheduler|D-Bus User Message Bus Socket|Unix socket for apport crash forwarding|debconf communication socket)\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) (GnuPG network certificate management daemon|CUPS Scheduler|D-Bus User Message Bus Socket|Unix socket for apport crash forwarding|debconf communication socket|Sound System)\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Reached|Stopped) target [a-zA-Z ]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Reloading|Reloaded) Samba SMB Daemon[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Mounting|Mounted) Arbitrary Executable File Formats File System[.]+$
@@ -196,6 +197,8 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ linux-boot-prober: debug: running /usr/lib/linux-boot-probes/[a-z0-9-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ linux-boot-prober: debug: linux detected by /usr/lib/linux-boot-probes/[a-z0-9-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ fstrim\[[0-9]+\]: /: 0 B \(0 bytes\) trimmed$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ fwupdmgr\[[0-9]+\]: Updating lvfs$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ fwupdmgr\[[0-9]+\]: Successfully downloaded new metadata: 0 local devices supported$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ get-external-ip: failed to obtain external IP address, provider: [0-9a-z-]+, empty or invalid response$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ debsums: missing file /usr/share/locale/pl/LC_MESSAGES/mc\.mo \(from mc-data package\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (rkhunter|Rootkit Hunter): Rootkit hunter check started \(version [0-9.]+\)$
