@@ -96,7 +96,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Reloaded configuration$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus\[[0-9]+\]: \[system\] Activating service name='[0-9a-z._]+' \(using servicehelper\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus(-daemon)?\[[0-9]+\]: \[system\] Successfully activated service '[0-9a-zA-Z._]+'$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus(-daemon)?\[[0-9]+\]: \[system\] Activating via systemd: service name='[0-9a-zA-Z._]+' unit='[0-9a-z.-]+'( requested by '[0-9.:]+' \(uid=[0-9]+ pid=[0-9]+ comm="([0-9a-zA-Z/\ .-]+)?"( label="unconfined")?\))?$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus(-daemon)?\[[0-9]+\]: \[system\] Activating via systemd: service name='[0-9a-zA-Z._]+' unit='[0-9a-z.-]+'( requested by '[0-9.:]+' \(uid=[0-9]+ pid=[0-9]+ comm="([0-9a-zA-Z/\ .=-]+)?"( label="unconfined")?\))?$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus(-daemon)?\[[0-9]+\]: \[system\] Activation via systemd failed for unit '[0-9a-z.-]+': Unit [0-9a-z.-]+ not found\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PackageKit: daemon (start|quit)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ nm-dispatcher: req:[0-9]+ 'dhcp4-change' \[[0-9a-z.]+\]: new request \([0-9]+ scripts\)$
