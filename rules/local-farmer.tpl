@@ -9,7 +9,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Accepted publickey for [a-z0-9-]+ from [0-9.]+ port [0-9]+ ssh2: (RSA|DSA) [0-9a-zA-Z:+/]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Postponed publickey for [a-z0-9-]+ from [0-9.]+ port [0-9]+ ssh2 \[preauth\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Disconnecting: Too many authentication failures \[preauth\]$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Disconnected from( user (root|backup|circleci))? [0-9.]+ port [0-9]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Disconnected from( user (root|backup|circleci|admin|ubuntu))? [0-9.]+ port [0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: Timeout, client not responding[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sftp-server\[[0-9]+\]: error: process_write: write failed$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: DHCP(NAK|ACK|OFFER) (of [.0-9]{7,15} )?from [.0-9]{7,15}( \(xid=0x[0-9a-f]+\))?$
@@ -18,6 +18,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: message repeated [0-9]+ times: \[ DHCPREQUEST of [.0-9]{7,15} on [[:alnum:].-]+ to [.0-9]{7,15} port [0-9]+ \(xid=0x[0-9a-f]+\)\]$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: bound(:| to [.0-9]{7,15} --) renewal in [0-9]+ seconds\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient(\[[0-9]+\])?: XMT: Solicit on eth0, interval [0-9]+ms\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ ntpd\[[0-9]+\]: leapsecond file \('/usr/share/zoneinfo/leap-seconds.list'\): will expire in less than [0-9]+ days$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ ntpdate\[[0-9]+\]: (adjust|step) time server [0-9.]{7,15} offset -?[0-9.]+ sec$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sSMTP\[[0-9]+\]: Sent mail for .* \([0-9]+ [0-9.]+ Bye\) uid=[0-9]+ username=[\._[:alnum:]-]+ outbytes=[0-9]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sSMTP\[[0-9]+\]: message repeated [0-9]+ times: \[ Sent mail for .* \([0-9]+ [0-9.]+ Bye\) uid=[0-9]+ username=[\._[:alnum:]-]+ outbytes=[0-9]+\]$
@@ -153,7 +154,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-timesyncd\[[0-9]+\]: Timed out waiting for reply from [0-9.]+:123 \([0-9a-z.]+\)\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd-wait-online\[[0-9]+\]: Event loop failed: Connection timed out$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ apt-helper\[[0-9]+\]: E: (Sub-process|Podproces) /lib/systemd/systemd-networkd-wait-online .* \(1\)$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: [a-zA-Z0-9@-]+\.(service|mount|socket|scope): Succeeded\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: [a-zA-Z0-9@-]+\.(mount|path|scope|service|socket|timer): Succeeded\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: gpgconf: running /usr/bin/gpg-agent failed \(exitcode=2\): General error$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: gpgconf: fatal error \(exit status 1\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: message repeated [0-9]+ times: \[ Reloading\.\]$
@@ -181,6 +182,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Failed to reset devices\.list on /(init\.scope|user\.slice|system\.slice/[0-9a-z\\.-]+): Operation not permitted$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Failed to canonicalize path /home/(.+): Permission denied$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: [a-z.-]+\.timer: Adding [0-9a-z. ]+ random time\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: [a-z0-9@-]+\.(slice|service|scope): Consumed ([0-9]+h )?([0-9]+min )?[0-9ms.]+ CPU time\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ apport\[[0-9]+\]:  \* (Start|Stop)ing automatic crash report generation: apport$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ apport\[[0-9]+\]:    \.\.\.done\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ snap\[[0-9]+\]: All snaps up-to-date\.$
@@ -193,12 +195,19 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ os-prober: debug: /dev/(mapper/)?[a-z0-9_-]+: is active swap$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ [a-z0-9-]+: debug: /dev/(mapper/)?[a-z0-9_-]+ is not (a|an) [a-zA-Z0-9+]+ partition: exiting$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ [a-z0-9-]+: debug: Not on UEFI platform$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ [a-z0-9]+-tests: debug: /dev/[a-z0-9]+ type not recognised; skipping$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ [a-z0-9-]+: debug: Skipping legacy bootloaders on UEFI system$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ [a-z0-9]+-tests: debug: /dev/[a-z0-9]+ (type not recognised|is a LUKS partition); skipping$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ [a-z0-9]+(-tests)?: debug: running subtest /usr/lib/os-probes/mounted/(efi/)?[a-z0-9-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ linux-boot-prober: debug: running /usr/lib/linux-boot-probes/[a-z0-9-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ linux-boot-prober: debug: linux detected by /usr/lib/linux-boot-probes/[a-z0-9-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ fstrim\[[0-9]+\]: /: 0 B \(0 bytes\) trimmed$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ fwupd\[[0-9]+\]: [0-9:]+ GLib-GIO             g_[a-z_]+: assertion '(.+)' failed$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ fwupdmgr\[[0-9]+\]: Updating lvfs$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ fwupdmgr\[[0-9]+\]: Successfully downloaded new metadata: 0 local devices supported$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Failed to start (Refresh fwupd metadata and update motd|Firmware update daemon)\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: fwupd(-refresh)?\.service: Failed with result '(exit-code|core-dump)'\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: fwupd(-refresh)?\.service: Main process exited, code=(exited|dumped), status=(1/FAILURE|11/SEGV)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus-daemon\[[0-9]+\]: \[system\] Failed to activate service 'org\.freedesktop\.fwupd': timed out \(service_start_timeout=[0-9]+ms\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ get-external-ip: failed to obtain external IP address, provider: [0-9a-z-]+, empty or invalid response$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ debsums: missing file /usr/share/locale/pl/LC_MESSAGES/mc\.mo \(from mc-data package\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (rkhunter|Rootkit Hunter): Rootkit hunter check started \(version [0-9.]+\)$
