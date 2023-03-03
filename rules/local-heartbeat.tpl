@@ -11,3 +11,4 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ postfix/smtpd\[[0-9]+\]: disconnect from localhost(.localdomain)?\[127.0.0.1\] commands=0/0$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ epmd: epmd: got partial packet only on file descriptor [0-9]+ \(0\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ influxd\[[0-9]+\]: \[tcp\] [0-9/]+ [0-9:]+ tcp\.Mux: cannot read header byte: EOF$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ mariadbd\[[0-9]+\]: [0-9:\ -]+ \[Warning\] Aborted connection [0-9]+ to db: 'unconnected' user: 'unauthenticated' host: 'localhost' \(This connection closed normally without authentication\)$
