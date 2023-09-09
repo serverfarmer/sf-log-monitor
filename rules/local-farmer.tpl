@@ -155,6 +155,9 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-networkd-wait-online\[[0-9]+\]: Event loop failed: Connection timed out$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ apt-helper\[[0-9]+\]: E: (Sub-process|Podproces) /lib/systemd/systemd-networkd-wait-online .* \(1\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: [a-zA-Z0-9@-]+\.(mount|path|scope|service|socket|timer): Succeeded\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (logrotate|certbot|fwupd|fwupd-refresh|phpsessionclean|dpkg-db-backup|man-db|apt-daily|apt-daily-upgrade|apt-news|motd-news|update-notifier-download|ua-timer|esm-cache|systemd-tmpfiles-clean|user@0|user@34|user-runtime-dir@0|user-runtime-dir@34)\.service: Deactivated successfully\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: run-user-[0-9]+\.mount: Deactivated successfully\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: session-[0-9]+\.scope: Deactivated successfully\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: gpgconf: running /usr/bin/gpg-agent failed \(exitcode=2\): General error$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: gpgconf: fatal error \(exit status 1\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: message repeated [0-9]+ times: \[ Reloading\.\]$
@@ -169,9 +172,9 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started) (Exit the Session|Certbot|ntp-systemd-netif\.service|Discard unused blocks)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (User Manager for UID |User Runtime Directory /run/user/)[0-9]+[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) Daily apt( download)?( upgrade and clean)? activities[.]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (System Logging Service|Cleanup of Temporary Directories|Clean php session files|Automatically refresh installed snaps|ACPI event daemon|Daemon for generating UUIDs|Ubuntu Advantage APT and MOTD Messages)[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (System Logging Service|Cleanup of Temporary Directories|Clean php session files|Automatically refresh installed snaps|ACPI event daemon|Daemon for generating UUIDs|Ubuntu Advantage APT and MOTD Messages|Update APT News|Update the local ESM caches)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (Time & Date Service|Network Time Synchronization|Network Name Resolution|udev Kernel Device Manager|Message of the Day|Journal Service|Server Farmer Firewall|Trigger to poll for Ubuntu Pro licenses \(Only enabled on GCP LTS non-pro\))[.]+$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (Unattended Upgrades Shutdown|Sockets|LSB: automatic crash report generation|Rotate log files|Daily man-db regeneration|D-Bus User Message Bus|D-Bus User Message Bus Socket)[.]+$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (Unattended Upgrades Shutdown|Sockets|LSB: automatic crash report generation|Rotate log files|Daily man-db regeneration|Daily dpkg database backup service|D-Bus User Message Bus|D-Bus User Message Bus Socket)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped|Finished) (Exit the Session|Online ext4 Metadata Check for All Filesystems|Discard unused blocks on filesystems from /etc/fstab|Refresh fwupd metadata and update motd|Ubuntu Advantage Timer for running repeated jobs)[.]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) GnuPG cryptographic agent( and passphrase cache)?( \((restricted|ssh-agent emulation|access for web browsers)\))?\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Listening on|Closed) (GnuPG network certificate management daemon|CUPS Scheduler|D-Bus User Message Bus Socket|Unix socket for apport crash forwarding|debconf communication socket|Sound System)\.$
@@ -203,6 +206,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ linux-boot-prober: debug: linux detected by /usr/lib/linux-boot-probes/[a-z0-9-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ fstrim\[[0-9]+\]: /: 0 B \(0 bytes\) trimmed$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ fwupd\[[0-9]+\]: [0-9:]+ GLib-GIO             g_[a-z_]+: assertion '(.+)' failed$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ fwupdmgr\[[0-9]+\]: (Downloading|Idle)…: [0-9]+%$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ fwupdmgr\[[0-9]+\]: Updating lvfs$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ fwupdmgr\[[0-9]+\]: Successfully downloaded new metadata: 0 local devices supported$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Failed to start (Refresh fwupd metadata and update motd|Firmware update daemon)\.$
@@ -210,7 +214,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: fwupd(-refresh)?\.service: Main process exited, code=(exited|dumped), status=(1/FAILURE|11/SEGV)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dbus-daemon\[[0-9]+\]: \[system\] Failed to activate service 'org\.freedesktop\.fwupd': timed out \(service_start_timeout=[0-9]+ms\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ get-external-ip: failed to obtain external IP address, provider: [0-9a-z-]+, empty or invalid response$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ debsums: missing file /usr/share/locale/pl/LC_MESSAGES/mc\.mo \(from mc-data package\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ debsums: missing file /usr/share/(doc|locale)/[a-zA-Z0-9@/._-]+ \(from [a-z0-9:.-]+ package\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (rkhunter|Rootkit Hunter): Rootkit hunter check started \(version [0-9.]+\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (rkhunter|Rootkit Hunter): Scanning took( [0-9]+ minute(s)? and)? [0-9]+ second(s)?$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ (rkhunter|Rootkit Hunter): Please inspect this machine, because it may be infected\.$
