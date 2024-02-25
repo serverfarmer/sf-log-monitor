@@ -125,7 +125,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ PAM-CGFS\[[0-9]+\]: cgroupfs v1: Failed to enter cgroups\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ su\[[0-9]+\]: pam_systemd\(su:session\): Cannot create session: Already running in a session$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sshd\[[0-9]+\]: pam_systemd\(sshd:session\): Failed to create session: No such file or directory$
-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd: pam_unix\(systemd-user:session\): session opened for user [a-z0-9-]+ by \(uid=[0-9]+\)$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd: pam_unix\(systemd-user:session\): session opened for user [a-z0-9-]+(\(uid=[0-9]+\))? by \(uid=[0-9]+\)$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd: pam_unix\(systemd-user:session\): session closed for user [a-z0-9-]+$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: Could not generate persistent MAC address for veth[0-9a-zA-Z]+: No such file or directory$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd-udevd\[[0-9]+\]: Network interface NamePolicy= disabled on kernel command line, ignoring\.$
@@ -164,6 +164,7 @@
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Reloading|Reexecuting)\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Received SIGRTMIN\+24 from PID [0-9]+ \((kill|n/a)\)\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: user@(0|34|65534)\.service: Killing process [0-9]+ \(kill\) with signal SIGKILL\.$
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: Queued start job for default target Main User Target\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Created|Removed) slice user-[0-9]+\.slice\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Created|Removed) slice User Slice of (UID )?[a-z0-9-]+\.$
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Created|Removed) slice User Application Slice\.$
